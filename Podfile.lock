@@ -1,0 +1,62 @@
+PODS:
+  - AWSAuthCore (2.8.2):
+    - AWSCore (= 2.8.2)
+  - AWSCognitoIdentityProvider (2.8.2):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.8.2)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.8.2)
+  - AWSDynamoDB (2.8.2):
+    - AWSCore (= 2.8.2)
+  - AWSMobileClient (2.8.2):
+    - AWSAuthCore (= 2.8.2)
+    - AWSCognitoIdentityProvider (= 2.8.2)
+  - BEMCheckBox (1.4.1)
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
+  - Kingfisher (5.2.0)
+  - Panels (2.0.3)
+  - ViewAnimator (2.2.2)
+
+DEPENDENCIES:
+  - AWSCognitoIdentityProvider
+  - AWSCore
+  - AWSDynamoDB
+  - AWSMobileClient
+  - BEMCheckBox
+  - Charts
+  - Kingfisher (~> 5.0)
+  - Panels
+  - ViewAnimator
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSAuthCore
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSDynamoDB
+    - AWSMobileClient
+    - BEMCheckBox
+    - Charts
+    - Kingfisher
+    - Panels
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  AWSAuthCore: 8c0eddbbac753aac0b52575719f5985197952cb5
+  AWSCognitoIdentityProvider: 0d51cf765c70dd180bad7683dabb7942c6ada768
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: b6448752e992345082d7bad29d86e4839b72b4ba
+  AWSDynamoDB: ca6dfa4d6f3394514fa6df26a9f38dd9a1dd9dbf
+  AWSMobileClient: fbecd70719cf424f146ba9e3751c9cb77d9e92e9
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  Panels: bd346a08593b64b9d295de21c366400a93437e79
+  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
+
+PODFILE CHECKSUM: 1fdaa8f3ea0d3f9e30ba5595a25acf37526d2d29
+
+COCOAPODS: 1.6.0
