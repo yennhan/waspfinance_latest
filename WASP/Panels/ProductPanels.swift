@@ -16,8 +16,16 @@ class ProductPanels: UIViewController,Panelable {
     @IBOutlet weak var theImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        makeRounded(theImage: theImage)
         // Do any additional setup after loading the view.
     }
     
+    func makeRounded(theImage: UIImageView) {
+        
+        theImage.layer.borderWidth = 1
+        theImage.layer.masksToBounds = false
+        theImage.layer.borderColor = UIColor.lightGray.cgColor
+        theImage.layer.cornerRadius = theImage.frame.height/2
+        theImage.clipsToBounds = true
+    }
 }

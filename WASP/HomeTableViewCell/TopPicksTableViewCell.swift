@@ -25,3 +25,18 @@ class TopPicksTableViewCell: UITableViewCell {
 
 }
 
+/*extension TopPicksTableViewCell: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    {
+        let layout  = theCV?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludeSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offSet = targetContentOffset.pointee
+        let index = (offSet.x + scrollView.contentInset.left) / cellWidthIncludeSpacing
+        
+        let roundedIndex = round(index)
+        offSet = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offSet
+        
+    }
+}*/

@@ -35,22 +35,16 @@ class ProductDetailsViewController: UIViewController {
         if (self.user == nil) {
             self.user = self.pool?.currentUser()
         }
-        let panel = UIStoryboard.instantiatePanel(identifier: "ProductPanels")
-    
-        let panelConfiguration = PanelConfiguration(size: .half,visibleArea: 300.0)
-        
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        //setup image and make rounded
         logoImage.kf.setImage(with: URL(string: cityImage[0]))
         makeRounded(theImage: logoImage)
-        // To present the panel
-        panelManager.show(panel: panel, config: panelConfiguration)
-        // To dismiss the panel
-        panelManager.dismiss()
-        // Do any additional setup after loading the view.
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
     @IBAction func dismissView(_ sender: Any) {

@@ -420,6 +420,7 @@ extension UIImageView {
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
+        if scrollView.tag == 1 {
         let layout  = self.theViewCollection.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludeSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
@@ -430,5 +431,8 @@ extension HomeViewController: UIScrollViewDelegate {
         offSet = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offSet
         
+        }
+        
     }
 }
+
