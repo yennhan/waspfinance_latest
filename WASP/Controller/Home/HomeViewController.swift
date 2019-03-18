@@ -386,7 +386,7 @@ extension HomeViewController{
         let gradientColors = [UIColor(red: 97/255, green: 197/255, blue: 137/255, alpha: 0.5)
             , UIColor(red: 97/255, green: 197/255, blue: 137/255, alpha: 1)] as CFArray // Colors of the gradient
         let colorLocations:[CGFloat] = [1.0, 0.0] // Positioning of the gradient
-        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
+        //let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
         //set.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
         set.fillColor = UIColor(red: 97/255, green: 197/255, blue: 137/255, alpha: 0.2)
 

@@ -20,14 +20,31 @@ class ProductDetailsViewController: UIViewController {
     var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
 
     lazy var panelManager = Panels(target: self)
+    
+    @IBOutlet weak var theInfo: UIButton!
+    @IBOutlet weak var theCharges: UIButton!
+    @IBOutlet weak var theCalculator: UIButton!
+    
+    @IBOutlet weak var infoUnderline: UILabel!
+    @IBOutlet weak var chargesUnderline: UILabel!
+    @IBOutlet weak var calculatorUnderline: UILabel!
+    
     //coming soon datas
     let cityImage = ["https://s3-ap-southeast-1.amazonaws.com/wasp-images/application/drb.jpg"]
 
     
 
     @IBOutlet weak var logoImage: UIImageView!
+    var thePVC: DetailPageViewController!
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewsegue"{
+            if segue.destination.isKind(of: DetailPageViewController.self){
+                thePVC = segue.destination as! DetailPageViewController
+                
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,4 +94,38 @@ class ProductDetailsViewController: UIViewController {
         theImage.clipsToBounds = true
     }
 
+    @IBAction func goToInfo(_ sender: Any) {
+        theInfo.setTitleColor(UIColor.black, for: .normal)
+        theCalculator.setTitleColor(UIColor.lightGray, for: .normal)
+        theCharges.setTitleColor(UIColor.lightGray, for: .normal)
+        
+        infoUnderline.backgroundColor = UIColor.black
+        calculatorUnderline.backgroundColor = UIColor.lightGray
+        chargesUnderline.backgroundColor = UIColor.lightGray
+        thePVC.setViewcontrollerFromIndex(index: 0)
+    }
+    
+    @IBAction func goToCharges(_ sender: Any) {
+        theCharges.setTitleColor(UIColor.black, for: .normal)
+        chargesUnderline.backgroundColor = UIColor.black
+        
+        theInfo.setTitleColor(UIColor.lightGray, for: .normal)
+        theCalculator.setTitleColor(UIColor.lightGray, for: .normal)
+        infoUnderline.backgroundColor = UIColor.lightGray
+        calculatorUnderline.backgroundColor = UIColor.lightGray
+        thePVC.setViewcontrollerFromIndex(index: 1)
+    }
+    
+    @IBAction func goToCalculator(_ sender: Any) {
+        theCalculator.setTitleColor(UIColor.black, for: .normal)
+        calculatorUnderline.backgroundColor = UIColor.black
+        
+        theCharges.setTitleColor(UIColor.lightGray, for: .normal)
+        chargesUnderline.backgroundColor = UIColor.lightGray
+        theInfo.setTitleColor(UIColor.lightGray, for: .normal)
+        infoUnderline.backgroundColor = UIColor.lightGray
+        
+        thePVC.setViewcontrollerFromIndex(index: 2)
+    }
 }
+

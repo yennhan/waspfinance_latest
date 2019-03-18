@@ -10,7 +10,6 @@
 		17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F7F1E258FC500174015 /* AppDelegate.swift */; };
 		17FC2F871E258FC500174015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F861E258FC500174015 /* Assets.xcassets */; };
 		17FC2F8A1E258FC500174015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F881E258FC500174015 /* LaunchScreen.storyboard */; };
-		17FC2F921E25908D00174015 /* CognitoLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F911E25908D00174015 /* CognitoLogo.png */; };
 		17FC2F951E2590D800174015 /* MFAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F941E2590D800174015 /* MFAViewController.xib */; };
 		17FC2F971E25928900174015 /* MFAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F961E25928900174015 /* MFAViewController.swift */; };
 		17FC2F991E25940900174015 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F981E25940900174015 /* SignInViewController.swift */; };
@@ -21,6 +20,14 @@
 		17FC2FA31E25A5D000174015 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */; };
 		17FC2FA51E25A77600174015 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA41E25A77600174015 /* HomeController.swift */; };
 		17FC2FA71E25A9A200174015 /* DevicesDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */; };
+		2909666C223E6DE400B6FAC8 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909666B223E6DE400B6FAC8 /* DetailPageViewController.swift */; };
+		2909666E223E6E0B00B6FAC8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909666D223E6E0B00B6FAC8 /* InfoViewController.swift */; };
+		29096670223E6E2E00B6FAC8 /* ChargesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909666F223E6E2E00B6FAC8 /* ChargesViewController.swift */; };
+		29096672223E6E4000B6FAC8 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29096671223E6E4000B6FAC8 /* CalculatorViewController.swift */; };
+		29096676223EC90400B6FAC8 /* InfoOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29096675223EC90400B6FAC8 /* InfoOneTableViewCell.swift */; };
+		2909DC2C223F89DD00F79636 /* InfoTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909DC2B223F89DD00F79636 /* InfoTwoTableViewCell.swift */; };
+		2909DC2E223F89E900F79636 /* InfoThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909DC2D223F89E900F79636 /* InfoThreeTableViewCell.swift */; };
+		2909DC30223FFD7300F79636 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909DC2F223FFD7300F79636 /* PurchaseViewController.swift */; };
 		290A7CF8223381E300E15878 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290A7CF7223381E300E15878 /* Gradient.swift */; };
 		290BE27322357DB600340EC1 /* TopBondsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BE27222357DB600340EC1 /* TopBondsCollectionViewCell.swift */; };
 		290BE277223583F100340EC1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BE276223583F100340EC1 /* HomeTableViewCell.swift */; };
@@ -53,7 +60,6 @@
 		17FC2F861E258FC500174015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17FC2F891E258FC500174015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17FC2F8B1E258FC500174015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17FC2F911E25908D00174015 /* CognitoLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CognitoLogo.png; sourceTree = "<group>"; };
 		17FC2F941E2590D800174015 /* MFAViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFAViewController.xib; sourceTree = "<group>"; };
 		17FC2F961E25928900174015 /* MFAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFAViewController.swift; sourceTree = "<group>"; };
 		17FC2F981E25940900174015 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +70,14 @@
 		17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		17FC2FA41E25A77600174015 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesDetailTableViewController.swift; sourceTree = "<group>"; };
+		2909666B223E6DE400B6FAC8 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		2909666D223E6E0B00B6FAC8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		2909666F223E6E2E00B6FAC8 /* ChargesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargesViewController.swift; sourceTree = "<group>"; };
+		29096671223E6E4000B6FAC8 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		29096675223EC90400B6FAC8 /* InfoOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOneTableViewCell.swift; sourceTree = "<group>"; };
+		2909DC2B223F89DD00F79636 /* InfoTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTwoTableViewCell.swift; sourceTree = "<group>"; };
+		2909DC2D223F89E900F79636 /* InfoThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoThreeTableViewCell.swift; sourceTree = "<group>"; };
+		2909DC2F223FFD7300F79636 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		290A7CF7223381E300E15878 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		290BE27222357DB600340EC1 /* TopBondsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBondsCollectionViewCell.swift; sourceTree = "<group>"; };
 		290BE276223583F100340EC1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,25 +144,47 @@
 				17FC2F881E258FC500174015 /* LaunchScreen.storyboard */,
 				17FC2F8B1E258FC500174015 /* Info.plist */,
 				2977149122304D17003F9F8C /* awsconfiguration.json */,
-				17FC2F931E25909300174015 /* Supporting Files */,
 				29529CEB2238403A0099E1D4 /* Panels */,
+				29EB399B223E22F100CF4DBE /* DetailView */,
 				29529CE422382F8A0099E1D4 /* Controller */,
 				290BE27422357DC700340EC1 /* HomeCollectionViewCell */,
 				290BE27522357E2C00340EC1 /* Databases */,
 				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				29529CE322382E5A0099E1D4 /* HomeTableViewCell */,
 				290A7CF7223381E300E15878 /* Gradient.swift */,
-				29EB399B223E22F100CF4DBE /* DetailView */,
 			);
 			path = WASP;
 			sourceTree = "<group>";
 		};
-		17FC2F931E25909300174015 /* Supporting Files */ = {
+		29096673223E981900B6FAC8 /* PagesStyleVC */ = {
 			isa = PBXGroup;
 			children = (
-				17FC2F911E25908D00174015 /* CognitoLogo.png */,
+				2909666B223E6DE400B6FAC8 /* DetailPageViewController.swift */,
+				2909666D223E6E0B00B6FAC8 /* InfoViewController.swift */,
+				2909666F223E6E2E00B6FAC8 /* ChargesViewController.swift */,
+				29096671223E6E4000B6FAC8 /* CalculatorViewController.swift */,
 			);
-			name = "Supporting Files";
+			path = PagesStyleVC;
+			sourceTree = "<group>";
+		};
+		2909DC312240069100F79636 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2969A41022230165007C18F1 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2909DC322240069A00F79636 /* Login&Registration */ = {
+			isa = PBXGroup;
+			children = (
+				17FC2F961E25928900174015 /* MFAViewController.swift */,
+				17FC2F981E25940900174015 /* SignInViewController.swift */,
+				17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */,
+				17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */,
+				17FC2F9C1E259E5D00174015 /* SignUpViewController.swift */,
+			);
+			path = "Login&Registration";
 			sourceTree = "<group>";
 		};
 		290BE27422357DC700340EC1 /* HomeCollectionViewCell */ = {
@@ -186,20 +222,16 @@
 		29529CE422382F8A0099E1D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */,
-				2969A41022230165007C18F1 /* HomeViewController.swift */,
+				2909DC322240069A00F79636 /* Login&Registration */,
+				2909DC312240069100F79636 /* Home */,
 				29529CE122382E480099E1D4 /* SplashScreenViewController.swift */,
 				17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */,
-				17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */,
-				17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */,
-				17FC2F9C1E259E5D00174015 /* SignUpViewController.swift */,
 				17FC2F9E1E259F3200174015 /* ConfirmSignUpViewController.swift */,
-				17FC2F961E25928900174015 /* MFAViewController.swift */,
-				17FC2F981E25940900174015 /* SignInViewController.swift */,
 				17FC2FA41E25A77600174015 /* HomeController.swift */,
 				295FA64322394BA2001756C3 /* ParentHomeViewController.swift */,
 				295FA64522395D51001756C3 /* HomePageViewController.swift */,
 				295FA64722395FF8001756C3 /* SecondViewController.swift */,
+				2909DC2F223FFD7300F79636 /* PurchaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +248,11 @@
 		29EB399B223E22F100CF4DBE /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */,
+				29096675223EC90400B6FAC8 /* InfoOneTableViewCell.swift */,
+				2909DC2B223F89DD00F79636 /* InfoTwoTableViewCell.swift */,
+				2909DC2D223F89E900F79636 /* InfoThreeTableViewCell.swift */,
+				29096673223E981900B6FAC8 /* PagesStyleVC */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -304,7 +341,6 @@
 				17FC2F871E258FC500174015 /* Assets.xcassets in Resources */,
 				2977149222304D17003F9F8C /* awsconfiguration.json in Resources */,
 				29529CED2238404F0099E1D4 /* ProductPanels.storyboard in Resources */,
-				17FC2F921E25908D00174015 /* CognitoLogo.png in Resources */,
 				17FC2F951E2590D800174015 /* MFAViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,10 +411,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2909666C223E6DE400B6FAC8 /* DetailPageViewController.swift in Sources */,
 				17FC2FA31E25A5D000174015 /* ConfirmForgotPasswordViewController.swift in Sources */,
 				17FC2FA11E25A25900174015 /* ForgotPasswordViewController.swift in Sources */,
+				2909DC30223FFD7300F79636 /* PurchaseViewController.swift in Sources */,
 				17FC2F9D1E259E5D00174015 /* SignUpViewController.swift in Sources */,
 				29529CDE223825AD0099E1D4 /* ComingSoonTableViewCell.swift in Sources */,
+				2909666E223E6E0B00B6FAC8 /* InfoViewController.swift in Sources */,
 				17FC2F9F1E259F3200174015 /* ConfirmSignUpViewController.swift in Sources */,
 				295FA64422394BA2001756C3 /* ParentHomeViewController.swift in Sources */,
 				17FC2F9B1E259E0500174015 /* Constants.swift in Sources */,
@@ -386,21 +425,26 @@
 				290BE27322357DB600340EC1 /* TopBondsCollectionViewCell.swift in Sources */,
 				17FC2F991E25940900174015 /* SignInViewController.swift in Sources */,
 				29529CE0223826170099E1D4 /* ComingSoonCollectionViewCell.swift in Sources */,
+				29096672223E6E4000B6FAC8 /* CalculatorViewController.swift in Sources */,
 				29529CE82238351B0099E1D4 /* ProductPanels.swift in Sources */,
 				297714902230473B003F9F8C /* AccountDatabase.swift in Sources */,
 				2977149622315B67003F9F8C /* HomeCollectionViewCell.swift in Sources */,
 				17FC2F971E25928900174015 /* MFAViewController.swift in Sources */,
 				2969A41122230165007C18F1 /* HomeViewController.swift in Sources */,
+				29096670223E6E2E00B6FAC8 /* ChargesViewController.swift in Sources */,
 				295FA64C223A3983001756C3 /* TopPicksCollectionViewCell.swift in Sources */,
 				17FC2FA71E25A9A200174015 /* DevicesDetailTableViewController.swift in Sources */,
+				2909DC2E223F89E900F79636 /* InfoThreeTableViewCell.swift in Sources */,
 				17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */,
 				295FA64A223A3950001756C3 /* TopPicksTableViewCell.swift in Sources */,
 				29529CE222382E480099E1D4 /* SplashScreenViewController.swift in Sources */,
 				17FC2FA51E25A77600174015 /* HomeController.swift in Sources */,
 				295FA64622395D51001756C3 /* HomePageViewController.swift in Sources */,
+				2909DC2C223F89DD00F79636 /* InfoTwoTableViewCell.swift in Sources */,
 				295FA64822395FF8001756C3 /* SecondViewController.swift in Sources */,
 				290BE2792237AD0300340EC1 /* MyPortfolioCollectionViewCell.swift in Sources */,
 				290BE27B2237AD6000340EC1 /* MyPortfolioTableViewCell.swift in Sources */,
+				29096676223EC90400B6FAC8 /* InfoOneTableViewCell.swift in Sources */,
 				290BE277223583F100340EC1 /* HomeTableViewCell.swift in Sources */,
 				2977149422305481003F9F8C /* ProductDatabase.swift in Sources */,
 				29529CE62238309B0099E1D4 /* ProductDetailsViewController.swift in Sources */,
