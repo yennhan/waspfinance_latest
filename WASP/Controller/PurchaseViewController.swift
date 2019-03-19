@@ -11,10 +11,9 @@ import UIKit
 class PurchaseViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var theView: UIView!
-    
     @IBOutlet weak var theAmount: UITextField!
-    
     @IBOutlet weak var termsCView: UIView!
+    @IBOutlet weak var amountLabel: UILabel!
     
     @objc func keyboardWillChange(notification: Notification){
         guard let keyboardRect  = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -23,7 +22,8 @@ class PurchaseViewController: UIViewController,UITextFieldDelegate {
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
             view.frame.origin.y = -keyboardRect.height
         }else {
-        view.frame.origin.y = 0
+            
+            view.frame.origin.y = 0
         }
     }
     override func viewDidLoad() {
@@ -54,9 +54,19 @@ class PurchaseViewController: UIViewController,UITextFieldDelegate {
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == " " {
+            return false
+        }
         
+        let userEnteredString = textField.text
+        
+        var newString = (userEnteredString! as NSString).replacingCharacters(in: range, with: string) as NSString
+        var theNumber:Int = Int((newString).intValue)
+        let theAmount = theNumber * 100
+        amountLabel.text = "Total Amount: RM \(theAmount)"
+        
+        return true
     }
 
     @IBAction func dismissButton(_ sender: Any) {
