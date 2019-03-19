@@ -237,7 +237,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "productDetail") as! ProductDetailsViewController
         self.present(vc, animated: true, completion: nil)
     }

@@ -17,7 +17,7 @@ class DetailPageViewController: UIPageViewController {
         return [
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController,
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "ChargesViewController") as! ChargesViewController,
-            UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "CalculatorViewController") as! CalculatorViewController,
+            UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "CalculatorViewController") as! relatedDocs,
             ]
     }()
     override func didMove(toParent parent: UIViewController?) {

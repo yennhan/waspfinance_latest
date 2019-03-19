@@ -19,7 +19,6 @@ class ProductDetailsViewController: UIViewController {
     // define a variable to store initial touch position
     var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
 
-    lazy var panelManager = Panels(target: self)
     
     @IBOutlet weak var theInfo: UIButton!
     @IBOutlet weak var theCharges: UIButton!
@@ -127,5 +126,10 @@ class ProductDetailsViewController: UIViewController {
         
         thePVC.setViewcontrollerFromIndex(index: 2)
     }
+    @IBAction func investNowButton(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 
