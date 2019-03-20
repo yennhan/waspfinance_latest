@@ -61,8 +61,8 @@ class PurchaseViewController: UIViewController,UITextFieldDelegate {
         
         let userEnteredString = textField.text
         
-        var newString = (userEnteredString! as NSString).replacingCharacters(in: range, with: string) as NSString
-        var theNumber:Int = Int((newString).intValue)
+        let newString = (userEnteredString! as NSString).replacingCharacters(in: range, with: string) as NSString
+        let theNumber:Int = Int((newString).intValue)
         let theAmount = theNumber * 100
         amountLabel.text = "Total Amount: RM \(theAmount)"
         
