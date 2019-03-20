@@ -7,12 +7,19 @@
 //
 
 import UIKit
-
+import Panels
 class SecondViewController: UIViewController {
 
+    lazy var panelManager = Panels(target:self)
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let panel = UIStoryboard.instantiatePanel(identifier: "ProductPanels")
+        let panelConfiguration = PanelConfiguration(size: .half)
+        
+        // To present the panel
+        panelManager.show(panel: panel, config: panelConfiguration)
+            // To dismiss the panel
+        panelManager.dismiss()
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -23,15 +30,5 @@ class SecondViewController: UIViewController {
         theview.homeUnderline.backgroundColor = UIColor.lightGray
         theview.marketUnderline.backgroundColor = UIColor.black
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
