@@ -35,6 +35,8 @@ class SecondViewController: UIViewController {
         theview.Home.setTitleColor(UIColor.lightGray, for: .normal)
         theview.homeUnderline.backgroundColor = UIColor.lightGray
         theview.marketUnderline.backgroundColor = UIColor.black
+        theview.Portfolio.setTitleColor(UIColor.lightGray, for: .normal)
+        theview.portfolioUnderline.backgroundColor = UIColor.lightGray
         theTotalBonds.text = "Total Bonds: \(theItems.count)"
     }
 

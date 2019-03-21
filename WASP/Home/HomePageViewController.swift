@@ -14,7 +14,7 @@ class HomePageViewController: UIPageViewController {
         return [
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "HomePageID") as! HomeViewController,
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "secondVC") as! SecondViewController,
-            UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "HomePageID") as! HomeViewController,
+            UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "ThirdPageID") as! ThirdViewController,
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "secondVC") as! SecondViewController,
         ]
     }()

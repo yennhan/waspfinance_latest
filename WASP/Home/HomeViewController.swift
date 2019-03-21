@@ -82,6 +82,9 @@ as! ParentHomeViewController
         theview.Market.setTitleColor(UIColor.lightGray, for: .normal)
         theview.homeUnderline.backgroundColor = UIColor.black
         theview.marketUnderline.backgroundColor = UIColor.lightGray
+        theview.Portfolio.setTitleColor(UIColor.lightGray, for: .normal)
+        theview.portfolioUnderline.backgroundColor = UIColor.lightGray
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -189,7 +192,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }else if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            cell1.bondName.text = bondName[indexPath.row]
+            //cell1.bondName.text = bondName[indexPath.row]
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             

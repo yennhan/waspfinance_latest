@@ -37,6 +37,9 @@
 		2931649822440B7400927C45 /* MyPortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931649722440B7400927C45 /* MyPortfolioCollectionViewCell.swift */; };
 		2931649A22440B9200927C45 /* TopBondsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931649922440B9200927C45 /* TopBondsCollectionViewCell.swift */; };
 		2931649C22440BAF00927C45 /* TopPicksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931649B22440BAF00927C45 /* TopPicksCollectionViewCell.swift */; };
+		293164A022440F7C00927C45 /* firstCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931649F22440F7C00927C45 /* firstCTableViewCell.swift */; };
+		293164A222440F8D00927C45 /* secondCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164A122440F8D00927C45 /* secondCTableViewCell.swift */; };
+		293164A72244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */; };
 		29529CDE223825AD0099E1D4 /* ComingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */; };
 		29529CE222382E480099E1D4 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE122382E480099E1D4 /* SplashScreenViewController.swift */; };
 		29529CE62238309B0099E1D4 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */; };
@@ -94,6 +97,9 @@
 		2931649722440B7400927C45 /* MyPortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
 		2931649922440B9200927C45 /* TopBondsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBondsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2931649B22440BAF00927C45 /* TopPicksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPicksCollectionViewCell.swift; sourceTree = "<group>"; };
+		2931649F22440F7C00927C45 /* firstCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstCTableViewCell.swift; sourceTree = "<group>"; };
+		293164A122440F8D00927C45 /* secondCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCTableViewCell.swift; sourceTree = "<group>"; };
+		293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewHoldingCollectionViewCell.swift; sourceTree = "<group>"; };
 		29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		29529CE122382E480099E1D4 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 				2909DC312240069100F79636 /* Home */,
 				2965002E2241D83B001A080F /* SecondView */,
 				29EBA64B2244049900BAA53E /* Third View */,
+				2931649D22440D3A00927C45 /* Fourth View */,
 				290BE27522357E2C00340EC1 /* Databases */,
 				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				290A7CF7223381E300E15878 /* Gradient.swift */,
@@ -230,6 +237,30 @@
 			path = Databases;
 			sourceTree = "<group>";
 		};
+		2931649D22440D3A00927C45 /* Fourth View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Fourth View";
+			sourceTree = "<group>";
+		};
+		2931649E22440F6200927C45 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2931649F22440F7C00927C45 /* firstCTableViewCell.swift */,
+				293164A122440F8D00927C45 /* secondCTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		293164A3224414D700927C45 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		29529CE322382E5A0099E1D4 /* HomeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +321,8 @@
 		29EBA64B2244049900BAA53E /* Third View */ = {
 			isa = PBXGroup;
 			children = (
+				293164A3224414D700927C45 /* CollectionViewCell */,
+				2931649E22440F6200927C45 /* TableViewCell */,
 				29EBA64C2244055200BAA53E /* ThirdViewController.swift */,
 			);
 			path = "Third View";
@@ -458,11 +491,13 @@
 				2909DC30223FFD7300F79636 /* PurchaseViewController.swift in Sources */,
 				17FC2F9D1E259E5D00174015 /* SignUpViewController.swift in Sources */,
 				29529CDE223825AD0099E1D4 /* ComingSoonTableViewCell.swift in Sources */,
+				293164A222440F8D00927C45 /* secondCTableViewCell.swift in Sources */,
 				2909666E223E6E0B00B6FAC8 /* InfoViewController.swift in Sources */,
 				17FC2F9F1E259F3200174015 /* ConfirmSignUpViewController.swift in Sources */,
 				295FA64422394BA2001756C3 /* ParentHomeViewController.swift in Sources */,
 				17FC2F9B1E259E0500174015 /* Constants.swift in Sources */,
 				290A7CF8223381E300E15878 /* Gradient.swift in Sources */,
+				293164A72244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift in Sources */,
 				17FC2F991E25940900174015 /* SignInViewController.swift in Sources */,
 				29096672223E6E4000B6FAC8 /* RelatedDocs.swift in Sources */,
 				296500322241D8EB001A080F /* FirstCollectionViewCell.swift in Sources */,
@@ -470,6 +505,7 @@
 				297714902230473B003F9F8C /* AccountDatabase.swift in Sources */,
 				296500302241D86B001A080F /* FirstTableViewCell.swift in Sources */,
 				17FC2F971E25928900174015 /* MFAViewController.swift in Sources */,
+				293164A022440F7C00927C45 /* firstCTableViewCell.swift in Sources */,
 				2969A41122230165007C18F1 /* HomeViewController.swift in Sources */,
 				29096670223E6E2E00B6FAC8 /* ChargesViewController.swift in Sources */,
 				2931649822440B7400927C45 /* MyPortfolioCollectionViewCell.swift in Sources */,
