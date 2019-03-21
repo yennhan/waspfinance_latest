@@ -13,28 +13,22 @@ class firstCTableViewCell: UITableViewCell,ChartViewDelegate {
 
     @IBOutlet weak var theGradient: GradientView!
     @IBOutlet weak var theChart: PieChartView!
-    @IBOutlet weak var columnOne: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         theChart.delegate = self
-        //makeLineChart()
+       
         makePieChart()
-        //thePieChart.layer.cornerRadius = 2.0
-        //thePieChart.layer.borderWidth = 0.2
         theGradient.layer.borderWidth   = 0.2
         theGradient.layer.cornerRadius  = 5.0
-        columnOne.layer.cornerRadius    = 2.0
-        columnOne.layer.borderWidth     = 0.2
-        //thePieChart.extraBottomOffset = 5
-        //thePieChart.extraTopOffset = 5
-        //thePieChart.backgroundColor = UIColor(red: 86/255, green: 189/255, blue: 126/255, alpha: 1)
+        
         selectionStyle = .none
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 
 }

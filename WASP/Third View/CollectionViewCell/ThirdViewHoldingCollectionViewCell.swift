@@ -10,4 +10,5 @@ import UIKit
 
 class ThirdViewHoldingCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var theImage: UIImageView!
 }
