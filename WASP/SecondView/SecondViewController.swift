@@ -15,7 +15,9 @@ class SecondViewController: UIViewController {
     //let panel = UIStoryboard.instantiatePanel(identifier: "ProductPanels")
     //let panelConfiguration = PanelConfiguration(size: .thirdQuarter)
    
-    let theItems = [""]
+    let theItems = ["ACSMMK 6.650% Perpetual Corp (MYR)","ACSMMK 6.650% Perpetual Corp (MYR)","CIMBMK 5.800% Perpetual Corp (MYR)","DRBHMK 6.100% 14Feb2022 Corp (MYR)","DRBHMK 6.300% 29Jun2021 Corp (MYR)","ECWIMK 6.400% 25Oct2021 Corp (MYR)","FIRTSP 5.680% Perpetual Corp (SGD)","GEMAU 5.500% 18May2019 Corp (SGD)","GGRSP 5.350% 05Aug2019 Corp (MYR)"]
+    let price = ["101.25","102.50","99.50","100.00","98.50","102.00","101.75","105.50","100.00"]
+    let changePercentage = ["+0.55%","-0.50%","+2.00%","+3.00%","-1.50%","+0.75%","-0.25%","+0.50%","+0.00%"]
     override func viewDidLoad() {
         super.viewDidLoad()
         //panelManager.show(panel: panel, config: panelConfiguration)
@@ -24,6 +26,8 @@ class SecondViewController: UIViewController {
         theTableCV.dataSource = self
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var theTotalBonds: UILabel!
+    
     override func viewDidAppear(_ animated: Bool) {
         let theview = UIApplication.shared.windows[0].rootViewController
             as! ParentHomeViewController
@@ -31,6 +35,7 @@ class SecondViewController: UIViewController {
         theview.Home.setTitleColor(UIColor.lightGray, for: .normal)
         theview.homeUnderline.backgroundColor = UIColor.lightGray
         theview.marketUnderline.backgroundColor = UIColor.black
+        theTotalBonds.text = "Total Bonds: \(theItems.count)"
     }
 
 }
@@ -54,13 +59,25 @@ extension SecondViewController: UITableViewDelegate,UITableViewDataSource {
 
 extension SecondViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return theItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "theMarket", for: indexPath)
-        cell.layer.cornerRadius = 1.0
-        cell.layer.borderColor = UIColor.darkGray.cgColor
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "theMarket", for: indexPath) as! FirstCollectionViewCell
+        
+        cell.tradeTitle.text = theItems[indexPath.row]
+        cell.tradeLastPrice.text = price[indexPath.row]
+        if changePercentage[indexPath.row].first?.description == "+"
+        {
+            cell.tradePriceChange.backgroundColor = UIColor(red: 97/255, green: 197/255, blue: 137/255, alpha: 1)
+            cell.tradePriceChange.text = changePercentage[indexPath.row]
+        }else {
+            cell.tradePriceChange.backgroundColor = UIColor.red
+            cell.tradePriceChange.text = changePercentage[indexPath.row]
+        }
+        //cell.layer.cornerRadius = 4.0
+        //cell.layer.borderColor = UIColor.lightGray.cgColor
+        //cell.layer.borderWidth = 0.5
         return cell
     }
     

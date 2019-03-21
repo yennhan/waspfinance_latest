@@ -10,4 +10,7 @@ import UIKit
 
 class FirstCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var tradeTitle: UILabel!
+    @IBOutlet weak var tradeLastPrice: UILabel!
+    @IBOutlet weak var tradePriceChange: UILabel!
 }

@@ -23,6 +23,9 @@ class ProductPanels: UIViewController,ChartViewDelegate {
     
     let lineChartView = MyLineChartView()
     
+    @IBOutlet weak var pCV: UICollectionView!
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -35,20 +38,46 @@ class ProductPanels: UIViewController,ChartViewDelegate {
         backgroundColor.layer.cornerRadius = 4.0
 
         theChart.delegate = self
-        theChart.myChartViewDelegate = self as? MyChartViewDelegate // delegate with our additions (knowing when a value is no longer selected)
+        theChart.myChartViewDelegate = self as MyChartViewDelegate // delegate with our additions (knowing when a value is no longer selected)
         theChart.highlightPerTapEnabled = false // disable tap gesture to highlight
         theChart.highlightPerDragEnabled = false // disable pan gesture
+        pCV.dataSource = self
+        pCV.delegate   = self
         theLabels.isHidden = true
         makeLineChart()
+        pCV.flashScrollIndicators()
        
     }
     func makeRounded(theImage: UIImageView) {
-        
         theImage.layer.borderWidth = 1
         theImage.layer.masksToBounds = false
         theImage.layer.borderColor = UIColor.black.cgColor
         theImage.layer.cornerRadius = theImage.frame.height/2
         theImage.clipsToBounds = true
+    }
+}
+extension ProductPanels: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pOneCell", for: indexPath) as! pOneCollectionViewCell
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.borderWidth = 0.5
+            return cell
+        } else if indexPath.row == 1 {
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "pTwoCell", for: indexPath) as! pTwoCollectionViewCell
+            cell2.layer.borderColor = UIColor.lightGray.cgColor
+            cell2.layer.borderWidth = 0.5
+            return cell2
+        }else {
+            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "pThreeCell", for: indexPath) as! pThreeCollectionViewCell
+            cell3.layer.borderColor = UIColor.lightGray.cgColor
+            cell3.layer.borderWidth = 0.5
+            return cell3
+        }
     }
 }
 
@@ -109,6 +138,11 @@ extension ProductPanels {
         theLabels!.frame.origin.x = highlight.xPx
         theLabels.text = "\(entry.y)"
         theLabels.textColor = UIColor.white
+
+            //theLabels.isHidden = false
+        theLabels.fadeIn()
+        thePeriodSchedule.fadeOut()
+        
         //self.testCollection.isScrollEnabled = false
         //var set1 = LineChartDataSet()
         //set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
@@ -126,6 +160,7 @@ extension ProductPanels: MyChartViewDelegate {
     func chartValueNoLongerSelected(_ chartView: ChartViewBase) {
         theLabels!.isHidden = true
         thePeriodSchedule.isHidden = false
+        thePeriodSchedule.fadeIn()
         // Do something on deselection
     }
 }
@@ -133,20 +168,23 @@ extension UIView {
     
     func fadeIn(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
         UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            
             self.alpha = 1.0
         }, completion: completion)  }
     
-    func fadeOut(duration: TimeInterval = 1.0, delay: TimeInterval = 3.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+    func fadeOut(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.alpha = 0.0
         }, completion: completion)
     }
     
 }
 
+
 @objc protocol MyChartViewDelegate {
     @objc optional func chartValueNoLongerSelected(_ chartView: MyLineChartView)
 }
+
 
 open class MyLineChartView: LineChartView {
     
