@@ -54,6 +54,14 @@ class ParentHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: NSNotification.Name("toggleSideMenu"), object: nil)
+        
+        //calling all profile,sign out and settings
+         NotificationCenter.default.addObserver(self, selector: #selector(showProfile), name: NSNotification.Name("showProfile"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showSetttings), name: NSNotification.Name("showSettings"), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(LogOut), name: NSNotification.Name("showSignIn"), object: nil)
+
+        
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -101,6 +109,19 @@ class ParentHomeViewController: UIViewController {
 
     @IBAction func theSideMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
+    }
+    @objc func showProfile() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "showProfile") as! ProfileViewController
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    @objc func showSetttings() {
+       // performSegue(withIdentifier: "ShowSettings", sender: nil)
+        
+    }
+    @objc func LogOut() {
+        
+        
     }
     @objc func toggleSideMenu(){
         if sideMenuOpen {

@@ -41,6 +41,7 @@
 		293164A222440F8D00927C45 /* secondCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164A122440F8D00927C45 /* secondCTableViewCell.swift */; };
 		293164A72244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */; };
 		293164AD224552A900927C45 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164AC224552A900927C45 /* SideMenuVC.swift */; };
+		293164AF22455CDC00927C45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164AE22455CDC00927C45 /* ProfileViewController.swift */; };
 		29529CDE223825AD0099E1D4 /* ComingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */; };
 		29529CE222382E480099E1D4 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE122382E480099E1D4 /* SplashScreenViewController.swift */; };
 		29529CE62238309B0099E1D4 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */; };
@@ -102,6 +103,7 @@
 		293164A122440F8D00927C45 /* secondCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCTableViewCell.swift; sourceTree = "<group>"; };
 		293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewHoldingCollectionViewCell.swift; sourceTree = "<group>"; };
 		293164AC224552A900927C45 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		293164AE22455CDC00927C45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		29529CE122382E480099E1D4 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				290A7CF7223381E300E15878 /* Gradient.swift */,
 				293164AC224552A900927C45 /* SideMenuVC.swift */,
+				293164AE22455CDC00927C45 /* ProfileViewController.swift */,
 			);
 			path = WASP;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */,
 				2931649C22440BAF00927C45 /* TopPicksCollectionViewCell.swift in Sources */,
 				295FA64A223A3950001756C3 /* TopPicksTableViewCell.swift in Sources */,
+				293164AF22455CDC00927C45 /* ProfileViewController.swift in Sources */,
 				29EBA64D2244055200BAA53E /* ThirdViewController.swift in Sources */,
 				29529CE222382E480099E1D4 /* SplashScreenViewController.swift in Sources */,
 				17FC2FA51E25A77600174015 /* HomeController.swift in Sources */,
