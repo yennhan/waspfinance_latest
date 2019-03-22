@@ -24,7 +24,7 @@ class SecondViewController: UIViewController {
         //panelManager.dismiss()
         theTableCV.delegate = self
         theTableCV.dataSource = self
-        // Do any additional setup after loading the view.
+       
     }
     @IBOutlet weak var theTotalBonds: UILabel!
     
@@ -95,5 +95,6 @@ extension SecondViewController: UICollectionViewDelegate,UICollectionViewDataSou
         self.present(controller, animated: true, completion: nil)
         
     }
+  
 }
 

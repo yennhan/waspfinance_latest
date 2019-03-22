@@ -15,6 +15,9 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
         //tableView.delegate   = self
         tableView.dataSource = self
+        //let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
+        //tap.numberOfTapsRequired = 1
+        //view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
@@ -62,5 +65,4 @@ extension ThirdViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "thirdCVCell", for: indexPath)
         return cell
     }
-    
 }

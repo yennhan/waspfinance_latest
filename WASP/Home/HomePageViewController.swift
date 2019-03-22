@@ -38,9 +38,8 @@ extension HomePageViewController: UIPageViewControllerDelegate, UIPageViewContro
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex:Int = subViewController.index(of: viewController) ?? 0
         if currentIndex <= 0 {
-             NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
             return nil
-           
+            
         } else
             {
                 

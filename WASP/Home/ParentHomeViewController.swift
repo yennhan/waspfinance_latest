@@ -60,7 +60,6 @@ class ParentHomeViewController: UIViewController {
 
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
-        
         view.addGestureRecognizer(edgePan)
         
     }
@@ -121,8 +120,6 @@ class ParentHomeViewController: UIViewController {
         
     }
     @objc func LogOut() {
-        
-        
     }
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
@@ -152,4 +149,5 @@ class ParentHomeViewController: UIViewController {
             
         }
     }
+   
 }

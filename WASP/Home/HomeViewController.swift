@@ -69,10 +69,10 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
-        
         view.addGestureRecognizer(edgePan)
         
     }
+
     /*override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     } */
