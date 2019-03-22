@@ -34,8 +34,6 @@ class ParentHomeViewController: UIViewController {
         if segue.identifier == "PVCsegue"{
             if segue.destination.isKind(of: HomePageViewController.self){
                 thePVC = segue.destination as! HomePageViewController
-               
-               
             }
         }
     }
@@ -60,7 +58,10 @@ class ParentHomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showSetttings), name: NSNotification.Name("showSettings"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(LogOut), name: NSNotification.Name("showSignIn"), object: nil)
 
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
         
+        view.addGestureRecognizer(edgePan)
         
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,6 +124,11 @@ class ParentHomeViewController: UIViewController {
         
         
     }
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            print("Screen edge swiped!")
+        }
+    }
     @objc func toggleSideMenu(){
         if sideMenuOpen {
             sideMenuOpen = false
@@ -136,6 +142,14 @@ class ParentHomeViewController: UIViewController {
         }
         UIView.animate(withDuration: 0.3){
             self.view.layoutIfNeeded()
+        }
+    }
+    @objc func ifMenuSwipeOut() {
+        if sideMenuOpen == true {
+            sideMenuOpen = false
+            theChangeMenu.constant = 0
+            theTopMenu.constant = +240
+            
         }
     }
 }

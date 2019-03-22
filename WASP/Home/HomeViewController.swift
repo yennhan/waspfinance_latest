@@ -67,6 +67,11 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         }
         //queryProducts()
         
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        
+        view.addGestureRecognizer(edgePan)
+        
     }
     /*override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -118,7 +123,13 @@ as! ParentHomeViewController
         self.response = nil
         self.refresh()
     }
-    
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            let theview = UIApplication.shared.windows[0].rootViewController
+                as! ParentHomeViewController
+            theview.toggleSideMenu()
+        }
+    }
 }
 extension HomeViewController:  UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -305,7 +316,6 @@ extension HomeViewController {
         // 1) Configure the query
         let queryExpression = AWSDynamoDBQueryExpression()
         queryExpression.keyConditionExpression = "#sub = :sub"
-        
         queryExpression.expressionAttributeNames = [
             "#sub": "sub"
             

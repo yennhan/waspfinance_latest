@@ -25,7 +25,7 @@ class HomePageViewController: UIPageViewController {
         delegate   = self
         
         setViewcontrollerFromIndex(index: 0)
-       
+
     }
     func setViewcontrollerFromIndex(index:Int){
         self.setViewControllers([subViewController[index]], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
@@ -38,8 +38,9 @@ extension HomePageViewController: UIPageViewControllerDelegate, UIPageViewContro
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex:Int = subViewController.index(of: viewController) ?? 0
         if currentIndex <= 0 {
+             NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
             return nil
-            
+           
         } else
             {
                 
