@@ -27,6 +27,9 @@ class ParentHomeViewController: UIViewController {
     @IBOutlet weak var portfolioUnderline: UILabel!
     @IBOutlet weak var productUnderline: UILabel!
     
+    @IBOutlet weak var theChangeMenu: NSLayoutConstraint!
+    @IBOutlet weak var theTopMenu: NSLayoutConstraint!
+    var sideMenuOpen = false
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PVCsegue"{
             if segue.destination.isKind(of: HomePageViewController.self){
@@ -49,6 +52,8 @@ class ParentHomeViewController: UIViewController {
         self.refresh()
         Home.setTitleColor(UIColor.black, for: .normal)
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: NSNotification.Name("toggleSideMenu"), object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -92,5 +97,24 @@ class ParentHomeViewController: UIViewController {
     }
     @IBAction func goToProduct(_ sender: Any) {
         thePVC.setViewcontrollerFromIndex(index: 3)
+    }
+
+    @IBAction func theSideMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
+    }
+    @objc func toggleSideMenu(){
+        if sideMenuOpen {
+            sideMenuOpen = false
+            theChangeMenu.constant = 0
+            theTopMenu.constant = +240
+            
+        }else {
+            sideMenuOpen = true
+            theChangeMenu.constant = -240
+            theTopMenu.constant = 0
+        }
+        UIView.animate(withDuration: 0.3){
+            self.view.layoutIfNeeded()
+        }
     }
 }
