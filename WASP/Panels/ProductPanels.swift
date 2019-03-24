@@ -56,18 +56,19 @@ class ProductPanels: UIViewController,ChartViewDelegate {
         theImage.clipsToBounds = true
     }
     @IBAction func buyItem(_ sender: Any) {
-       // self.present
+        let vc = storyboard?.instantiateViewController(withIdentifier: "buyBond") as! BuyViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func sellProduct(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "sellBond") as! SellViewController
+        self.present(vc, animated: true, completion: nil)
     }
-    
 }
 extension ProductPanels: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pOneCell", for: indexPath) as! pOneCollectionViewCell
@@ -113,7 +114,6 @@ extension ProductPanels{
         let val = [ChartDataEntry(x:1,y:1),ChartDataEntry(x:2,y:10),ChartDataEntry(x:3,y:30),ChartDataEntry(x:4,y:4),ChartDataEntry(x:5,y:50),ChartDataEntry(x:6,y:6),ChartDataEntry(x:7,y:60),ChartDataEntry(x:8,y:26),ChartDataEntry(x:9,y:65),ChartDataEntry(x:10,y:99),ChartDataEntry(x:11,y:110),ChartDataEntry(x:12,y:140),ChartDataEntry(x:13,y:56),ChartDataEntry(x:14,y:150)]
         let set  = LineChartDataSet(values:val,label:"The Chart")
         set.fillColor = UIColor.white.withAlphaComponent(0.5)
-        
         set.colors = [UIColor.white]
         set.lineWidth = 2.0
         set.drawCirclesEnabled = false

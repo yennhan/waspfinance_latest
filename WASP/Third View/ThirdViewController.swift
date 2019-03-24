@@ -13,12 +13,6 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.delegate   = self
-        tableView.dataSource = self
-        //let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
-        //tap.numberOfTapsRequired = 1
-        //view.addGestureRecognizer(tap)
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +56,8 @@ extension ThirdViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "thirdCVCell", for: indexPath)
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "thirdCVCell", for: indexPath) as! ThirdViewHoldingCollectionViewCell
+        
         return cell
     }
 }

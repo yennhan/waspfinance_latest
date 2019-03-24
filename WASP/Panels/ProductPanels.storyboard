@@ -593,7 +593,7 @@
         <!--Buy View Controller-->
         <scene sceneID="7ye-Pj-f64">
             <objects>
-                <viewController storyboardIdentifier="buyBond" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nDP-hd-1Ob" customClass="BuyViewController" customModule="WASP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="buyBond" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nDP-hd-1Ob" customClass="BuyViewController" customModule="WASP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UAG-fO-1F0"/>
                         <viewControllerLayoutGuide type="bottom" id="NAG-WK-ERg"/>
@@ -789,6 +789,10 @@
                                         <rect key="frame" x="22" y="45" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="cancelblack"/>
+                                        <connections>
+                                            <action selector="dismissBuy:" destination="nDP-hd-1Ob" eventType="touchUpInside" id="Gyu-lx-R8M"/>
+                                            <action selector="dismissBuy:" destination="RmD-2p-sNJ" eventType="touchUpInside" id="mPg-ay-V2q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -800,6 +804,7 @@
                     <navigationItem key="navigationItem" id="Kqt-st-Cpp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eR2-0j-6mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RmD-2p-sNJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="775" y="856"/>
         </scene>
@@ -836,7 +841,7 @@
         <!--Sell View Controller-->
         <scene sceneID="bUQ-jE-BmD">
             <objects>
-                <viewController storyboardIdentifier="sellBond" id="JEp-G4-BWy" customClass="SellViewController" customModule="WASP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellBond" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEp-G4-BWy" customClass="SellViewController" customModule="WASP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SgB-GN-eYE"/>
                         <viewControllerLayoutGuide type="bottom" id="GH8-td-Nal"/>
@@ -1032,6 +1037,9 @@
                                         <rect key="frame" x="22" y="45" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="cancelblack"/>
+                                        <connections>
+                                            <action selector="dismissSell:" destination="JEp-G4-BWy" eventType="touchUpInside" id="mBx-dt-sA5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
