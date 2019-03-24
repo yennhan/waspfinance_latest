@@ -43,7 +43,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
     
     //database variable
     var productArray: [Products] = []
-    var pName: String!
+    var pName: [String] = []
     @IBOutlet weak var theHomeTableView: UITableView!
 
     var theViewCollection: UICollectionView!
@@ -60,6 +60,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
         getAllProducts()
+       
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -122,6 +123,7 @@ extension HomeViewController:  UITableViewDelegate, UITableViewDataSource{
             cell.theCV.dataSource = self
             cell.theCV.tag = indexPath.row
             theViewCollection = cell.theCV
+            
             cell.reloadInputViews()
             cell.theCV.reloadData()
             //makeCards(theCard: cell)
@@ -154,7 +156,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            
+            //cell1.bondName.text = productArray[indexPath.row]._productName
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
@@ -170,9 +172,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }else if collectionView.tag == 2{
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "myHolding", for: indexPath) as! MyPortfolioCollectionViewCell
             cell2.theImage.kf.setImage(with:  URL(string: picURL[indexPath.row]))
-           
             cell2.theName.text = bondName[indexPath.row]
-           
             cell2.layer.borderColor = UIColor.gray.cgColor
             cell2.layer.borderWidth = 0.2
             cell2.theImage.layer.borderColor = UIColor.gray.cgColor
@@ -257,7 +257,6 @@ extension HomeViewController {
                 DispatchQueue.main.async(execute: {
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                     self.productArray = paginatedOutput.items as! [Products]
-                    
                     self.theViewCollection.reloadData()
                 })
                 
