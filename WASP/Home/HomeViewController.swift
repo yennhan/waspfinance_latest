@@ -40,50 +40,33 @@ class HomeViewController: UIViewController,ChartViewDelegate{
     var theLabels: UILabel!
     var theView: UIView!
     
-    @IBOutlet weak var theNAME: UILabel!
     
-    @IBOutlet weak var theLineChart: LineChartView!
-    
-    @IBOutlet weak var theLabelTop: UILabel!
-    
-    @IBOutlet weak var theInvestedView: UIView!
-    
-    @IBOutlet weak var accountView: UIView!
-    
-    @IBOutlet weak var theCollections: UICollectionView!
-    
+    //database variable
+    var productArray: [Products] = []
+    var pName: String!
     @IBOutlet weak var theHomeTableView: UITableView!
 
     var theViewCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //theLineChart.delegate = self
-        //self.tableView.delegate = self
-        
         
         self.pool = AWSCognitoIdentityUserPool(forKey: AWSCognitoUserPoolsSignInProviderKey)
         if (self.user == nil) {
             self.user = self.pool?.currentUser()
         }
-        //queryProducts()
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
-        
+        getAllProducts()
     }
-
-    /*override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    } */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //self.navigationController?.setToolbarHidden(true, animated: true)
     }
     override func viewDidAppear(_ animated: Bool) {
-        let theview = UIApplication.shared.windows[0].rootViewController
-as! ParentHomeViewController
+        let theview = UIApplication.shared.windows[0].rootViewController as! ParentHomeViewController
         theview.Home.setTitleColor(UIColor.black, for: .normal)
         theview.Market.setTitleColor(UIColor.lightGray, for: .normal)
         theview.homeUnderline.backgroundColor = UIColor.black
@@ -94,18 +77,9 @@ as! ParentHomeViewController
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //make gradient
         self.refresh()
         theHomeTableView.showsVerticalScrollIndicator = false
-        
-        //thebuttons.Home.setTitleColor(UIColor.black, for: .normal)
-        //makeCards(theCard: accountView)
-        //set corner radius
-        //accountView.layer.shouldRasterize = true
-       // hide label for graph
-        //theLabels!.isHidden = true
-        //makeLineChart()
-        //self.navigationController?.setToolbarHidden(false, animated: true)
+       
     }
     
     func refresh() {
@@ -134,7 +108,7 @@ as! ParentHomeViewController
 }
 extension HomeViewController:  UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,66 +122,41 @@ extension HomeViewController:  UITableViewDelegate, UITableViewDataSource{
             cell.theCV.dataSource = self
             cell.theCV.tag = indexPath.row
             theViewCollection = cell.theCV
+            cell.reloadInputViews()
             cell.theCV.reloadData()
             //makeCards(theCard: cell)
             return cell
         //cell.topBonds.reloadData()
-        }else if indexPath.row == 2{
+        }else {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "TopSupportCell",for: indexPath) as! MyPortfolioTableViewCell
             cell2.topSupporterCV.delegate   = self
             cell2.topSupporterCV.dataSource = self
             cell2.topSupporterCV.tag        = indexPath.row
             cell2.topSupporterCV.reloadData()
             return cell2
-        }else{
-            let cell3 = tableView.dequeueReusableCell(withIdentifier: "comingSoon",for: indexPath) as! ComingSoonTableViewCell
-            cell3.theCSView.delegate    = self
-            cell3.theCSView.dataSource  = self
-            cell3.theCSView.tag    = indexPath.row
-            cell3.theCSView.reloadData()
-            return cell3
         }
-        
     }
     
 }
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == theCollections {
-            return bondName.count
-        }else if collectionView.tag == 1 {
-            return bondName.count
+        if collectionView.tag == 1 {
+            return productArray.count
         }else if collectionView.tag == 2 {
                 return picURL.count
-        }else if collectionView.tag == 3 {
-            return upcomingPicURL.count
         }else {
             return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView.tag == 3 {
-            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "comingSoon", for: indexPath) as! ComingSoonCollectionViewCell
-            cell3.theCSImage.kf.setImage(with:  URL(string: upcomingPicURL[indexPath.row]))
-            
-            cell3.theCSName.text = theUpcomingBond[indexPath.row]
-            
-            cell3.layer.borderColor = UIColor.gray.cgColor
-            cell3.layer.borderWidth = 0.2
-            cell3.theCSImage.layer.borderColor = UIColor.gray.cgColor
-            cell3.theCSImage.layer.borderWidth = 0.2
-            cell3.layer.cornerRadius = 7.0
-            return cell3
-           
-        }else if collectionView.tag == 1{
+        if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            //cell1.bondName.text = bondName[indexPath.row]
+            
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
-            
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
             //makeRounded(theImage: cell1.theLogoImage)
             cell1.bondReturn.text = "Return: \(interestRate[indexPath.row])"
@@ -231,7 +180,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             cell2.layer.cornerRadius = 7.0
             return cell2
         }else  {
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myBonds", for: indexPath) as! HomeCollectionViewCell
             cell.bondName.text = bondName[indexPath.row]
             cell.bondPrice.text = bondPrice[indexPath.row]
@@ -243,11 +191,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
                 cell.priceChange.textColor = UIColor.red
                 cell.priceChange.text = fluctuactionPrice[indexPath.row]
             }
-            //let rowIndex = indexPath.row
-            //let numberofRecords:Int = self.bondName.count -1
-            //if (rowIndex < numberofRecords ) {rowIndex = (rowIndex + 1)}else {rowIndex = 0}
-            
-            /*scrollingTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(HomeViewController.startTimer(theTimer:)), userInfo: rowIndex, repeats: true)*/
             return cell
         }
     }
@@ -256,13 +199,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         let vc = storyboard?.instantiateViewController(withIdentifier: "productDetail") as! ProductDetailsViewController
         self.present(vc, animated: true, completion: nil)
     }
-    /*
-    //.allowUserInteraction
-    @objc func startTimer(theTimer:Timer){
-        UIView.animate(withDuration: 6, delay: 0, options: [.repeat, .autoreverse,.curveLinear,.allowUserInteraction], animations: {
-            self.theCollections.scrollToItem(at: IndexPath(row: theTimer.userInfo! as! Int,section:0), at: .centeredHorizontally, animated: false)
-        }, completion: nil)
-    }*/
     func makeRounded(theImage: UIImageView) {
         
         theImage.layer.borderWidth = 1
@@ -312,6 +248,26 @@ extension HomeViewController {
 }
 
 extension HomeViewController {
+    func getAllProducts() {
+        let queryExpression = AWSDynamoDBScanExpression()
+        // 2) Make the query
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        dynamoDbObjectMapper.scan(Products.self, expression: queryExpression).continueWith(block: { (task:AWSTask!) -> AnyObject? in
+            if task.result != nil {
+                DispatchQueue.main.async(execute: {
+                    let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
+                    self.productArray = paginatedOutput.items as! [Products]
+                    
+                    self.theViewCollection.reloadData()
+                })
+                
+            }
+            return nil
+        })
+            
+        }
+    
+    
     func queryAccount() {
         
         // 1) Configure the query
@@ -348,12 +304,12 @@ extension HomeViewController {
         queryExpression.keyConditionExpression = "#productID = :productID"
         
         queryExpression.expressionAttributeNames = [
-            "#productID": "product_id"
+            "#productID": "productID"
             
         ]
         
         queryExpression.expressionAttributeValues = [
-            ":productID" : "product_3"
+            ":productID" : "product1"
             
         ]
         
@@ -365,16 +321,17 @@ extension HomeViewController {
                 print("The request failed. Error: \(String(describing: error))")
             }
             if output != nil {
-                for books in output!.items {
-                    let booksItem = books as? Products
-                    print("\(booksItem!._productAuthor!)")
+                for items in output!.items {
+                    let theItem = items as? Products
+                    print(theItem!._crowdfunding![0])
+                    
                 }
             }
         }
     }
 }
 
-extension HomeViewController{
+/* extension HomeViewController{
     func makeLineChart() {
         self.theLineChart.data = setLineChartData()
         self.theLineChart.legend.enabled = false
@@ -422,7 +379,7 @@ extension HomeViewController{
         return data
         
     }
-}
+} */
 extension UIImageView {
     func setImageColor(color: UIColor) {
         let templateImage = self.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
