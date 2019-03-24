@@ -156,7 +156,8 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            //cell1.bondName.text = productArray[indexPath.row]._productName
+            let proName = productArray[0]._productName!
+            cell1.bondName.text = proName
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
@@ -259,7 +260,6 @@ extension HomeViewController {
                     self.productArray = paginatedOutput.items as! [Products]
                     self.theViewCollection.reloadData()
                 })
-                
             }
             return nil
         })

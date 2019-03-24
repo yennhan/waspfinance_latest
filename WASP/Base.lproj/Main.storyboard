@@ -1868,6 +1868,7 @@
                                                                 <constraint firstItem="VtG-7f-S9T" firstAttribute="top" secondItem="axm-KK-23t" secondAttribute="bottom" constant="1.6699999999999999" id="zo0-Ch-VF9"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="bondName" destination="Hi9-9v-sTe" id="2dU-e1-eEU"/>
                                                                 <outlet property="bondRating" destination="h1t-O3-0ol" id="cdd-b7-xYT"/>
                                                                 <outlet property="bondReturn" destination="Xhx-iC-G4w" id="foM-p3-5gY"/>
                                                                 <outlet property="bondTenure" destination="kle-se-qCG" id="B6j-HU-4B0"/>
