@@ -8,6 +8,8 @@
 
 import UIKit
 import Charts
+import SkeletonView
+
 class HomeTableViewCell: UITableViewCell,ChartViewDelegate {
 
     
@@ -17,25 +19,25 @@ class HomeTableViewCell: UITableViewCell,ChartViewDelegate {
     
     @IBOutlet weak var theGradient: GradientView!
     
+    @IBOutlet weak var theInvestment: UILabel!
+    @IBOutlet weak var theReturn: UILabel!
+    @IBOutlet weak var theBalance: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         thePieChart.delegate = self
-        //makeLineChart()
         makePieChart()
-        //thePieChart.layer.cornerRadius = 2.0
-        //thePieChart.layer.borderWidth = 0.2
         theGradient.layer.borderWidth   = 0.2
         theGradient.layer.cornerRadius  = 5.0
         columnOne.layer.cornerRadius    = 2.0
         columnOne.layer.borderWidth     = 0.2
-        //thePieChart.extraBottomOffset = 5
-        //thePieChart.extraTopOffset = 5
-        //thePieChart.backgroundColor = UIColor(red: 86/255, green: 189/255, blue: 126/255, alpha: 1)
         selectionStyle = .none
-        
-        //topBonds.isUserInteractionEnabled = false
-        //topBonds.backgroundColor = UIColor(red: 69/255, green: 108/255, blue: 214/255, alpha: 1)
-        // Initialization code
+        thePieChart.isSkeletonable = true
+        theInvestment.isSkeletonable = true
+        theReturn.isSkeletonable = true
+        theBalance.isSkeletonable = true
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

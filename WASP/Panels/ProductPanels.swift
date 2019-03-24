@@ -55,6 +55,13 @@ class ProductPanels: UIViewController,ChartViewDelegate {
         theImage.layer.cornerRadius = theImage.frame.height/2
         theImage.clipsToBounds = true
     }
+    @IBAction func buyItem(_ sender: Any) {
+       // self.present
+    }
+    
+    @IBAction func sellProduct(_ sender: Any) {
+    }
+    
 }
 extension ProductPanels: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -125,6 +132,7 @@ extension ProductPanels{
         
     }
 }
+
 
 extension ProductPanels {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {

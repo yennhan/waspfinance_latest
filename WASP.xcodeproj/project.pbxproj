@@ -42,6 +42,11 @@
 		293164A72244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */; };
 		293164AD224552A900927C45 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164AC224552A900927C45 /* SideMenuVC.swift */; };
 		293164AF22455CDC00927C45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293164AE22455CDC00927C45 /* ProfileViewController.swift */; };
+		294377BF2247808F006E49B6 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 294377BE2247808E006E49B6 /* profile.png */; };
+		294377C1224782E4006E49B6 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 294377C0224782E4006E49B6 /* settings.png */; };
+		294377C32247849C006E49B6 /* padlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 294377C22247849B006E49B6 /* padlock.png */; };
+		294377C52247943C006E49B6 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294377C42247943C006E49B6 /* BuyViewController.swift */; };
+		294377C722479444006E49B6 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294377C622479444006E49B6 /* SellViewController.swift */; };
 		29529CDE223825AD0099E1D4 /* ComingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */; };
 		29529CE222382E480099E1D4 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE122382E480099E1D4 /* SplashScreenViewController.swift */; };
 		29529CE62238309B0099E1D4 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */; };
@@ -104,6 +109,11 @@
 		293164A62244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewHoldingCollectionViewCell.swift; sourceTree = "<group>"; };
 		293164AC224552A900927C45 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		293164AE22455CDC00927C45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		294377BE2247808E006E49B6 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		294377C0224782E4006E49B6 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		294377C22247849B006E49B6 /* padlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock.png; sourceTree = "<group>"; };
+		294377C42247943C006E49B6 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		294377C622479444006E49B6 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		29529CDD223825AD0099E1D4 /* ComingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		29529CE122382E480099E1D4 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		29529CE52238309B0099E1D4 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 		17FC2F7E1E258FC500174015 /* WASP */ = {
 			isa = PBXGroup;
 			children = (
+				294377BD22478083006E49B6 /* assets */,
 				17FC2F941E2590D800174015 /* MFAViewController.xib */,
 				17FC2F7F1E258FC500174015 /* AppDelegate.swift */,
 				17FC2F831E258FC500174015 /* Main.storyboard */,
@@ -267,6 +278,16 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		294377BD22478083006E49B6 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				294377C0224782E4006E49B6 /* settings.png */,
+				294377C22247849B006E49B6 /* padlock.png */,
+				294377BE2247808E006E49B6 /* profile.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		29529CE322382E5A0099E1D4 /* HomeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +318,8 @@
 				29EBA64522437C7F00BAA53E /* pOneCollectionViewCell.swift */,
 				29EBA64722437C8A00BAA53E /* pTwoCollectionViewCell.swift */,
 				29EBA64922437C9400BAA53E /* pThreeCollectionViewCell.swift */,
+				294377C42247943C006E49B6 /* BuyViewController.swift */,
+				294377C622479444006E49B6 /* SellViewController.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -414,7 +437,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				295FA64022392C9B001756C3 /* Main.storyboard in Resources */,
+				294377C32247849C006E49B6 /* padlock.png in Resources */,
 				17FC2F8A1E258FC500174015 /* LaunchScreen.storyboard in Resources */,
+				294377C1224782E4006E49B6 /* settings.png in Resources */,
+				294377BF2247808F006E49B6 /* profile.png in Resources */,
 				17FC2F871E258FC500174015 /* Assets.xcassets in Resources */,
 				2977149222304D17003F9F8C /* awsconfiguration.json in Resources */,
 				29529CED2238404F0099E1D4 /* ProductPanels.storyboard in Resources */,
@@ -461,6 +487,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Panels/Panels.framework",
 				"${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -476,6 +503,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Panels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPStorkController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +529,7 @@
 				2909666E223E6E0B00B6FAC8 /* InfoViewController.swift in Sources */,
 				17FC2F9F1E259F3200174015 /* ConfirmSignUpViewController.swift in Sources */,
 				295FA64422394BA2001756C3 /* ParentHomeViewController.swift in Sources */,
+				294377C722479444006E49B6 /* SellViewController.swift in Sources */,
 				17FC2F9B1E259E0500174015 /* Constants.swift in Sources */,
 				290A7CF8223381E300E15878 /* Gradient.swift in Sources */,
 				293164A72244155200927C45 /* ThirdViewHoldingCollectionViewCell.swift in Sources */,
@@ -531,6 +560,7 @@
 				29EBA64622437C7F00BAA53E /* pOneCollectionViewCell.swift in Sources */,
 				2931649622440B5500927C45 /* HomeCollectionViewCell.swift in Sources */,
 				2931649422440B3300927C45 /* ComingSoonCollectionViewCell.swift in Sources */,
+				294377C52247943C006E49B6 /* BuyViewController.swift in Sources */,
 				295FA64822395FF8001756C3 /* SecondViewController.swift in Sources */,
 				2909DC342240EE6500F79636 /* RelatedDocsCollectionViewCell.swift in Sources */,
 				290BE27B2237AD6000340EC1 /* MyPortfolioTableViewCell.swift in Sources */,

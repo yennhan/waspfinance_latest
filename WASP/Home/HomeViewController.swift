@@ -11,6 +11,7 @@ import AWSCognitoIdentityProvider
 import AWSDynamoDB
 import Charts
 import Kingfisher
+import SkeletonView
 
 class HomeViewController: UIViewController,ChartViewDelegate{
 

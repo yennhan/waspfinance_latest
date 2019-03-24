@@ -17,6 +17,7 @@ PODS:
   - Charts/Core (3.2.2)
   - Kingfisher (5.2.0)
   - Panels (2.0.3)
+  - SkeletonView (1.4.2)
   - SPStorkController (1.5.4)
   - ViewAnimator (2.2.2)
 
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Charts
   - Kingfisher (~> 5.0)
   - Panels
+  - SkeletonView
   - SPStorkController
   - ViewAnimator
 
@@ -44,6 +46,7 @@ SPEC REPOS:
     - Charts
     - Kingfisher
     - Panels
+    - SkeletonView
     - SPStorkController
     - ViewAnimator
 
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   Panels: bd346a08593b64b9d295de21c366400a93437e79
+  SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
   SPStorkController: 6c34a0375ef1254299e460784886ff4e929b82ed
   ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: ebcf722c075253f13c8dd544c0c83b87d4fe39f7
+PODFILE CHECKSUM: c2afe4d4ca7204d785dfa0ca8abc4729ab178f35
 
 COCOAPODS: 1.6.0

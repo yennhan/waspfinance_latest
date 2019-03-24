@@ -120,10 +120,15 @@ class ParentHomeViewController: UIViewController {
         
     }
     @objc func LogOut() {
+        self.user?.signOut()
+        
+        self.response = nil
+        self.refresh()
+        
     }
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
-            print("Screen edge swiped!")
+            //Nothing
         }
     }
     @objc func toggleSideMenu(){
