@@ -156,15 +156,14 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            let proName = productArray[0]._productName!
-            cell1.bondName.text = proName
+            cell1.bondName.text = productArray[indexPath.row]._productName!
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
             //makeRounded(theImage: cell1.theLogoImage)
-            cell1.bondReturn.text = "Return: \(interestRate[indexPath.row])"
-            cell1.bondRating.text = "Ratings: \(ratings[indexPath.row])"
-            cell1.bondTenure.text = "Tenure(yrs): \(tenure[indexPath.row])"
+            cell1.bondReturn.text = "Return: \(String(describing: productArray[indexPath.row]._return!))"
+            cell1.bondRating.text = "Ratings: \(String(describing: productArray[indexPath.row]._productRatings!))"
+            cell1.bondTenure.text = "Tenure(yrs): \(String(describing: productArray[indexPath.row]._tenure!))"
             cell1.layer.borderColor = UIColor.lightGray.cgColor
             cell1.layer.borderWidth = 0.4
             cell1.layer.cornerRadius = 7.0
