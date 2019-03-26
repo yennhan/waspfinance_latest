@@ -28,6 +28,14 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var chargesUnderline: UILabel!
     @IBOutlet weak var calculatorUnderline: UILabel!
     
+    var theNameB: String!
+    //items display
+    @IBOutlet weak var bondName: UILabel!
+    @IBOutlet weak var bondPic: UIImageView!
+    @IBOutlet weak var byCompany: UILabel!
+    @IBOutlet weak var theDesc: UILabel!
+    
+    
     //coming soon datas
     let cityImage = ["https://s3-ap-southeast-1.amazonaws.com/wasp-images/application/drb.jpg"]
 
@@ -55,6 +63,7 @@ class ProductDetailsViewController: UIViewController {
         //setup image and make rounded
         logoImage.kf.setImage(with: URL(string: cityImage[0]))
         makeRounded(theImage: logoImage)
+        bondName.text = theNameB
 
     }
 

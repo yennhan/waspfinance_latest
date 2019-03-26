@@ -17,5 +17,7 @@ class TopPicksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var theLogoImage: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressBarLabel: UILabel!
+    @IBOutlet weak var amountBought: UILabel!
+    @IBOutlet weak var duration: UILabel!
     
 }

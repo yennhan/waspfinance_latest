@@ -978,6 +978,18 @@
             </objects>
             <point key="canvasLocation" x="774" y="189"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7MI-Ey-KRx">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="KYo-71-bfQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CzS-yc-EMq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOj-RP-qF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="188"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cancelblack" width="192" height="192"/>

@@ -751,12 +751,16 @@
                     <navigationItem key="navigationItem" id="YxL-bQ-btK"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bondName" destination="S2Y-da-HPz" id="lpo-be-ubs"/>
+                        <outlet property="bondPic" destination="2Yn-co-tJh" id="lVh-WG-6IS"/>
+                        <outlet property="byCompany" destination="OFJ-3Y-zF9" id="Ydp-WO-rv0"/>
                         <outlet property="calculatorUnderline" destination="tC2-US-UyP" id="v4p-4u-byb"/>
                         <outlet property="chargesUnderline" destination="kZQ-0F-E50" id="izz-K1-Nlg"/>
                         <outlet property="infoUnderline" destination="AfC-hO-ALo" id="iEb-8s-QBF"/>
                         <outlet property="logoImage" destination="2Yn-co-tJh" id="4ZF-kq-aKu"/>
                         <outlet property="theCalculator" destination="JZq-QU-WvJ" id="Vsn-12-mMU"/>
                         <outlet property="theCharges" destination="KPE-vf-Woe" id="MnN-s9-YdE"/>
+                        <outlet property="theDesc" destination="Et8-vE-F1B" id="mTW-1X-RTF"/>
                         <outlet property="theInfo" destination="wo9-T2-tZv" id="sOX-7W-SY6"/>
                     </connections>
                 </viewController>
@@ -1769,8 +1773,62 @@
                                                                             <constraint firstAttribute="width" constant="330" id="iC3-XR-VWS"/>
                                                                         </constraints>
                                                                     </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RM50,000 LEFT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukg-yc-iGW">
+                                                                        <rect key="frame" x="203" y="145.66666666666666" width="99" height="16.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                                                        <color key="textColor" red="0.24262937903404236" green="0.40306609869003296" blue="0.61390048265457153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-VS-eql">
+                                                                        <rect key="frame" x="130" y="35" width="70" height="64"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="axm-KK-23t">
+                                                                        <rect key="frame" x="21" y="166.33333333333334" width="288" height="2"/>
+                                                                        <color key="progressTintColor" red="0.25619104504585266" green="0.44734412431716919" blue="0.67689186334609985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </progressView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDRA ENERGY IMTN 5.850% 05.01.2026 - Tranche No 9" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-9v-sTe">
+                                                                        <rect key="frame" x="21" y="109" width="288" height="35.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="C02-tw-QdC">
+                                                                        <rect key="frame" x="21" y="170" width="68" height="34.333333333333343"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-Fu-uf2">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="39.333333333333336" height="16.666666666666668"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                                                <color key="textColor" red="0.26041394472122192" green="0.3989747166633606" blue="0.61764234304428101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bought (RM)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6s-8r-2BU">
+                                                                                <rect key="frame" x="0.0" y="17.666666666666657" width="68" height="16.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                                                                <color key="textColor" red="0.26041394472122192" green="0.3989747166633606" blue="0.61764234304428101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="8tW-Hj-7gu">
+                                                                        <rect key="frame" x="106.33333333333333" y="170" width="57.666666666666671" height="34.333333333333343"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtG-7f-S9T">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="14.333333333333334" height="16.666666666666668"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days to go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35d-Up-ndG">
+                                                                                <rect key="frame" x="0.0" y="17.666666666666657" width="57.666666666666664" height="16.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QP4-k6-T1G">
-                                                                        <rect key="frame" x="21" y="222.33333333333334" width="291" height="18"/>
+                                                                        <rect key="frame" x="21" y="198" width="291" height="18"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Return: 6%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhx-iC-G4w">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="18"/>
@@ -1792,86 +1850,40 @@
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RM50,000 LEFT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukg-yc-iGW">
-                                                                        <rect key="frame" x="203" y="145.66666666666666" width="99" height="16.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                                                        <color key="textColor" red="0.24262937903404236" green="0.40306609869003296" blue="0.61390048265457153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-VS-eql">
-                                                                        <rect key="frame" x="130" y="35" width="70" height="64"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    </imageView>
-                                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="axm-KK-23t">
-                                                                        <rect key="frame" x="21" y="166.33333333333334" width="288" height="2"/>
-                                                                        <color key="progressTintColor" red="0.25619104504585266" green="0.44734412431716919" blue="0.67689186334609985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </progressView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDRA ENERGY IMTN 5.850% 05.01.2026 - Tranche No 9" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-9v-sTe">
-                                                                        <rect key="frame" x="21" y="109" width="288" height="35.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-Fu-uf2">
-                                                                        <rect key="frame" x="21.000000000000004" y="170" width="39.333333333333343" height="16.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                                                        <color key="textColor" red="0.26041394472122192" green="0.3989747166633606" blue="0.61764234304428101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days to go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35d-Up-ndG">
-                                                                        <rect key="frame" x="104.00000000000001" y="187.66666666666666" width="57.666666666666671" height="16.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bought (RM)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6s-8r-2BU">
-                                                                        <rect key="frame" x="21" y="187.66666666666666" width="68" height="16.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                                                        <color key="textColor" red="0.26041394472122192" green="0.3989747166633606" blue="0.61764234304428101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtG-7f-S9T">
-                                                                        <rect key="frame" x="103" y="170" width="14.333333333333329" height="16.666666666666657"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="Hi9-9v-sTe" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="0Gs-ku-cuO"/>
+                                                                <constraint firstItem="C02-tw-QdC" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="0Wk-sg-aQf"/>
+                                                                <constraint firstItem="C02-tw-QdC" firstAttribute="top" secondItem="axm-KK-23t" secondAttribute="bottom" constant="1.6699999999999999" id="1Lf-v3-jqP"/>
                                                                 <constraint firstAttribute="trailing" secondItem="ubV-bE-gnZ" secondAttribute="trailing" id="6XP-5d-Cdf"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="axm-KK-23t" secondAttribute="trailing" constant="5" id="Aas-cc-kng"/>
                                                                 <constraint firstItem="0b6-bD-Ybk" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leading" id="Ad3-Pq-4C7"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="Hi9-9v-sTe" secondAttribute="trailing" constant="5" id="ExC-0K-GkW"/>
-                                                                <constraint firstItem="35d-Up-ndG" firstAttribute="top" secondItem="VtG-7f-S9T" secondAttribute="bottom" constant="1" id="HWJ-DR-Pfd"/>
-                                                                <constraint firstItem="8cP-Fu-uf2" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="I2a-gV-GIF"/>
                                                                 <constraint firstItem="ukg-yc-iGW" firstAttribute="top" secondItem="Hi9-9v-sTe" secondAttribute="bottom" constant="1" id="OIy-VV-yqS"/>
+                                                                <constraint firstItem="8tW-Hj-7gu" firstAttribute="top" secondItem="axm-KK-23t" secondAttribute="bottom" constant="1.6699999999999999" id="SRr-Li-TQl"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="ukg-yc-iGW" secondAttribute="trailing" constant="12" id="ScB-rO-Squ"/>
                                                                 <constraint firstItem="ubV-bE-gnZ" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leading" id="TxN-xi-4af"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="8tW-Hj-7gu" secondAttribute="trailing" constant="150" id="WAQ-Fx-xOV"/>
                                                                 <constraint firstAttribute="trailing" secondItem="0b6-bD-Ybk" secondAttribute="trailing" id="WRW-de-7pd"/>
                                                                 <constraint firstItem="0b6-bD-Ybk" firstAttribute="top" secondItem="0hq-wN-tuR" secondAttribute="top" id="XuU-da-bq6"/>
                                                                 <constraint firstItem="QP4-k6-T1G" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="Zcp-HI-kTf"/>
-                                                                <constraint firstItem="VtG-7f-S9T" firstAttribute="leading" secondItem="8cP-Fu-uf2" secondAttribute="trailing" constant="42.670000000000002" id="aQw-KO-0gK"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="QP4-k6-T1G" secondAttribute="bottom" id="ej6-7R-l0x"/>
                                                                 <constraint firstItem="Hi9-9v-sTe" firstAttribute="top" secondItem="ubV-bE-gnZ" secondAttribute="bottom" constant="3" id="fSN-py-36H"/>
                                                                 <constraint firstItem="ubV-bE-gnZ" firstAttribute="top" secondItem="0hq-wN-tuR" secondAttribute="top" id="hE9-NH-nEV"/>
-                                                                <constraint firstItem="35d-Up-ndG" firstAttribute="leading" secondItem="d6s-8r-2BU" secondAttribute="trailing" constant="15" id="hxv-XD-W2p"/>
                                                                 <constraint firstItem="axm-KK-23t" firstAttribute="top" secondItem="ukg-yc-iGW" secondAttribute="bottom" constant="4" id="kUN-Rn-ebZ"/>
-                                                                <constraint firstItem="8cP-Fu-uf2" firstAttribute="top" secondItem="axm-KK-23t" secondAttribute="bottom" constant="1.6699999999999999" id="nEE-84-3Sm"/>
                                                                 <constraint firstItem="axm-KK-23t" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="pMu-1w-HVu"/>
-                                                                <constraint firstItem="QP4-k6-T1G" firstAttribute="top" secondItem="d6s-8r-2BU" secondAttribute="bottom" constant="18" id="qVG-gF-vJ2"/>
-                                                                <constraint firstItem="d6s-8r-2BU" firstAttribute="top" secondItem="8cP-Fu-uf2" secondAttribute="bottom" constant="1" id="ugW-aK-mJz"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="QP4-k6-T1G" secondAttribute="trailing" constant="2" id="vLk-AS-4wx"/>
                                                                 <constraint firstItem="ukg-yc-iGW" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="187" id="xAF-n0-Ex7"/>
-                                                                <constraint firstItem="d6s-8r-2BU" firstAttribute="leading" secondItem="0hq-wN-tuR" secondAttribute="leadingMargin" constant="5" id="zh0-Mm-Cgh"/>
-                                                                <constraint firstItem="VtG-7f-S9T" firstAttribute="top" secondItem="axm-KK-23t" secondAttribute="bottom" constant="1.6699999999999999" id="zo0-Ch-VF9"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="amountBought" destination="8cP-Fu-uf2" id="VL2-WO-2mZ"/>
                                                                 <outlet property="bondName" destination="Hi9-9v-sTe" id="2dU-e1-eEU"/>
                                                                 <outlet property="bondRating" destination="h1t-O3-0ol" id="cdd-b7-xYT"/>
                                                                 <outlet property="bondReturn" destination="Xhx-iC-G4w" id="foM-p3-5gY"/>
                                                                 <outlet property="bondTenure" destination="kle-se-qCG" id="B6j-HU-4B0"/>
+                                                                <outlet property="duration" destination="VtG-7f-S9T" id="U6R-5E-Ydm"/>
                                                                 <outlet property="progressBar" destination="axm-KK-23t" id="8wG-Dj-tkW"/>
                                                                 <outlet property="progressBarLabel" destination="ukg-yc-iGW" id="Tud-Pw-wIZ"/>
                                                                 <outlet property="theLogoImage" destination="2Xh-VS-eql" id="UoL-bb-a8M"/>

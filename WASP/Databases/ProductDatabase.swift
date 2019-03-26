@@ -15,6 +15,7 @@ class Products: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     @objc var _productID: String?
     @objc var _productName: String?
     @objc var _productRatings: String?
+    @objc var _productDescriptions: String?
     @objc var _tenure: NSNumber?
     @objc var _return: NSNumber?
     @objc var _crowdfunding: NSArray?
@@ -35,9 +36,11 @@ class Products: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_productID" : "productID",
             "_productName" : "name",
             "_productRatings" : "Ratings",
+            "_productDescriptions": "Descriptions",
             "_tenure": "Tenure",
             "_return": "Return",
-            "_crowdfunding": "crowdfunding"
+            "_crowdfunding": "crowdfunding",
+            "_info1": "info1"
     
         ]
     }

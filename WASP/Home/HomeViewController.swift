@@ -161,10 +161,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
-            //makeRounded(theImage: cell1.theLogoImage)
             cell1.bondReturn.text = "Return: \(String(describing: productArray[indexPath.row]._return!))"
             cell1.bondRating.text = "Ratings: \(String(describing: productArray[indexPath.row]._productRatings!))"
             cell1.bondTenure.text = "Tenure(yrs): \(String(describing: productArray[indexPath.row]._tenure!))"
+            cell1.amountBought.text = "\(productArray[indexPath.row]._crowdfunding![1] as! NSNumber )"
+            cell1.duration.text = "\(productArray[indexPath.row]._crowdfunding![3] as! NSNumber )"
+            cell1.progressBarLabel.text = "\(productArray[indexPath.row]._crowdfunding![2]) LEFT"
+            
             cell1.layer.borderColor = UIColor.lightGray.cgColor
             cell1.layer.borderWidth = 0.4
             cell1.layer.cornerRadius = 7.0
@@ -198,6 +201,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "productDetail") as! ProductDetailsViewController
+        vc.theNameB = productArray[indexPath.row]._productName
         self.present(vc, animated: true, completion: nil)
     }
     func makeRounded(theImage: UIImageView) {
