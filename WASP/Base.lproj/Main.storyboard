@@ -1538,7 +1538,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Hc-gH-cCC">
                                 <rect key="frame" x="0.0" y="23" width="375" height="679"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="graph" rowHeight="260" id="fbm-Br-DPb" customClass="HomeTableViewCell" customModule="WASP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="260"/>
@@ -1548,10 +1548,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLa-jM-9wQ" customClass="GradientView" customModule="WASP" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="19" width="340" height="230"/>
+                                                    <rect key="frame" x="15" y="25" width="340" height="210"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h05-ac-LDR" customClass="GradientView" customModule="WASP" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="9" width="340" height="170"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="340" height="170"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5T-SK-HnI" customClass="PieChartView" customModule="Charts">
@@ -1652,11 +1652,11 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orb-27-5CX">
-                                                            <rect key="frame" x="0.0" y="178" width="340" height="40"/>
+                                                            <rect key="frame" x="0.0" y="170" width="340" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwC-yz-vu0">
-                                                                    <rect key="frame" x="258" y="5" width="73" height="30"/>
+                                                                    <rect key="frame" x="259" y="5" width="73" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="View More">
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1667,12 +1667,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="230" id="SMk-VW-8wP"/>
+                                                        <constraint firstAttribute="height" constant="210" id="SMk-VW-8wP"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
@@ -1697,6 +1694,9 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Portfolio Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfQ-VI-aHW">
@@ -1711,10 +1711,10 @@
                                                 <constraint firstItem="wLa-jM-9wQ" firstAttribute="leading" secondItem="vwk-dG-rrP" secondAttribute="leading" constant="15" id="O89-Ee-PIw"/>
                                                 <constraint firstAttribute="trailing" secondItem="wLa-jM-9wQ" secondAttribute="trailing" constant="20" id="Taw-aw-CiP"/>
                                                 <constraint firstAttribute="bottom" secondItem="wLa-jM-9wQ" secondAttribute="bottom" id="c1d-gx-Rim"/>
-                                                <constraint firstItem="wLa-jM-9wQ" firstAttribute="top" secondItem="vwk-dG-rrP" secondAttribute="top" constant="19" id="k5I-0K-aOD"/>
+                                                <constraint firstItem="wLa-jM-9wQ" firstAttribute="top" secondItem="vwk-dG-rrP" secondAttribute="top" constant="25" id="k5I-0K-aOD"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="columnOne" destination="orb-27-5CX" id="UJi-b2-qg4"/>
                                             <outlet property="theBalance" destination="VFm-4M-CXb" id="WpT-EX-Yvo"/>
@@ -1733,7 +1733,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="75X-TL-H9G">
                                                     <rect key="frame" x="15" y="40.333333333333343" width="345" height="274"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="274" id="pnJ-Eu-RRx"/>
                                                     </constraints>
@@ -1893,7 +1893,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="u83-an-edH" firstAttribute="top" secondItem="YPu-T9-2BV" secondAttribute="top" constant="17" id="02N-qX-dAc"/>
                                                 <constraint firstItem="75X-TL-H9G" firstAttribute="trailing" secondItem="YPu-T9-2BV" secondAttribute="trailingMargin" id="BKI-f3-4QQ"/>
@@ -1916,7 +1916,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-lu-VPX">
                                                     <rect key="frame" x="15" y="36.666666666666671" width="360" height="169"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="169" id="J26-KZ-J8L"/>
                                                     </constraints>
@@ -1977,6 +1977,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="vxG-lu-VPX" firstAttribute="top" secondItem="aYw-2h-Ztj" secondAttribute="bottom" constant="1.6699999999999999" id="6Pb-Ea-utO"/>
                                                 <constraint firstItem="vxG-lu-VPX" firstAttribute="leading" secondItem="Sqi-XS-4zT" secondAttribute="leading" constant="15" id="fDP-Sa-2LA"/>
@@ -1986,7 +1987,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="vxG-lu-VPX" secondAttribute="trailing" id="zFy-LT-Iwk"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="topSupporterCV" destination="vxG-lu-VPX" id="Yb7-Lb-8B1"/>
                                         </connections>
@@ -1998,7 +1998,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="wtx-oV-rN8">
@@ -2418,7 +2418,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Live Trading Hours:  Mondays to Fridays, 09:00hrs - 17:00hrs (excluding public holidays)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKO-3D-qAn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whats for Sale?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKO-3D-qAn">
                                 <rect key="frame" x="8" y="13" width="359" height="43"/>
                                 <color key="backgroundColor" red="0.26041394470000001" green="0.39897471670000001" blue="0.61764234299999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

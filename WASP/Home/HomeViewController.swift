@@ -59,7 +59,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
-        getAllProducts()
+       
        
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,6 +74,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         theview.marketUnderline.backgroundColor = UIColor.lightGray
         theview.Portfolio.setTitleColor(UIColor.lightGray, for: .normal)
         theview.portfolioUnderline.backgroundColor = UIColor.lightGray
+        getAllProducts()
         
     }
     override func viewWillAppear(_ animated: Bool) {
