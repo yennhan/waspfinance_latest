@@ -12,7 +12,7 @@ class DetailPageViewController: UIPageViewController {
     
     var parentCV = ProductDetailsViewController()
     var theIndex:Int = 0
-    
+    var theP: Products!
     lazy var subViewController: [UIViewController] = {
         return [
             UIStoryboard(name: "Main", bundle: nil ).instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController,
@@ -29,10 +29,12 @@ class DetailPageViewController: UIPageViewController {
         delegate   = self
         setViewcontrollerFromIndex(index: 0)
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         changeViewSelection(theNumber: 0)
+        print(theP)
     }
     func setViewcontrollerFromIndex(index:Int){
        
@@ -50,12 +52,9 @@ extension DetailPageViewController: UIPageViewControllerDelegate, UIPageViewCont
         theIndex = subViewController.index(of: viewController) ?? 0
         
         if currentIndex <= 0 {
-            
             return nil
-            
         } else
         {
-            
             return subViewController[currentIndex-1]
         }
     }

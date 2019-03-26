@@ -29,6 +29,10 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var calculatorUnderline: UILabel!
     
     var theNameB: String!
+    var theCompName: String!
+    var theDescription: String!
+    var infoArray: NSArray!
+    var theProducts: Products!
     //items display
     @IBOutlet weak var bondName: UILabel!
     @IBOutlet weak var bondPic: UIImageView!
@@ -64,7 +68,7 @@ class ProductDetailsViewController: UIViewController {
         logoImage.kf.setImage(with: URL(string: cityImage[0]))
         makeRounded(theImage: logoImage)
         bondName.text = theNameB
-
+        thePVC.theP = theProducts
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,6 +115,7 @@ class ProductDetailsViewController: UIViewController {
         calculatorUnderline.backgroundColor = UIColor.lightGray
         chargesUnderline.backgroundColor = UIColor.lightGray
         thePVC.setViewcontrollerFromIndex(index: 0)
+        
     }
     
     @IBAction func goToCharges(_ sender: Any) {

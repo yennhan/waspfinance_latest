@@ -11,15 +11,20 @@ import UIKit
 class InfoViewController: UIViewController {
     
     var parentCV = ProductDetailsViewController()
+   
+   
     @IBOutlet weak var theTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         theTableView.delegate = self
         theTableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        
     }
     
 }
+
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

@@ -202,6 +202,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "productDetail") as! ProductDetailsViewController
         vc.theNameB = productArray[indexPath.row]._productName
+        vc.theProducts = productArray[indexPath.row]
         self.present(vc, animated: true, completion: nil)
     }
     func makeRounded(theImage: UIImageView) {
