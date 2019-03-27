@@ -164,9 +164,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             cell1.bondReturn.text = "Return: \(String(describing: productArray[indexPath.row]._return!))"
             cell1.bondRating.text = "Ratings: \(String(describing: productArray[indexPath.row]._productRatings!))"
             cell1.bondTenure.text = "Tenure(yrs): \(String(describing: productArray[indexPath.row]._tenure!))"
-            cell1.amountBought.text = "\(productArray[indexPath.row]._crowdfunding![1] as! NSNumber )"
-            cell1.duration.text = "\(productArray[indexPath.row]._crowdfunding![3] as! NSNumber )"
-            cell1.progressBarLabel.text = "\(productArray[indexPath.row]._crowdfunding![2]) LEFT"
+            cell1.amountBought.text = "\(productArray[indexPath.row]._crowdfunding?.value(forKey: "totalAmountInvested") ?? "Not loaded" )"
+            //cell1.duration.text = "\(productArray[indexPath.row]._crowdfunding![3] as! NSNumber )"
+            //cell1.progressBarLabel.text = "\(productArray[indexPath.row]._crowdfunding![2]) LEFT"
             
             cell1.layer.borderColor = UIColor.lightGray.cgColor
             cell1.layer.borderWidth = 0.4

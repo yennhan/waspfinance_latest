@@ -11,6 +11,8 @@ import UIKit
 class DetailPageViewController: UIPageViewController {
     
     var parentCV = ProductDetailsViewController()
+    
+    var theInfo = InfoViewController()
     var theIndex:Int = 0
     var theP: Products!
     lazy var subViewController: [UIViewController] = {
@@ -22,19 +24,22 @@ class DetailPageViewController: UIPageViewController {
     }()
     override func didMove(toParent parent: UIViewController?) {
         self.parentCV = parent as! ProductDetailsViewController
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
         delegate   = self
         setViewcontrollerFromIndex(index: 0)
-        
+       
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         changeViewSelection(theNumber: 0)
-        print(theP)
+        let myInfo =  ["text": theP]
+        NotificationCenter.default.post(name: NSNotification.Name("passINFO"), object: nil, userInfo: myInfo as [AnyHashable : Any])
+        
     }
     func setViewcontrollerFromIndex(index:Int){
        

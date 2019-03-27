@@ -69,6 +69,7 @@ class ProductDetailsViewController: UIViewController {
         makeRounded(theImage: logoImage)
         bondName.text = theNameB
         thePVC.theP = theProducts
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {

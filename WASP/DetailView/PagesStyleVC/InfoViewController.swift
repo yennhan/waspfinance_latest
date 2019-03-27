@@ -10,8 +10,10 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
-    var parentCV = ProductDetailsViewController()
    
+    var theItem: Products!
+   
+    //var theParent = ProductDetailsViewController()
    
     @IBOutlet weak var theTableView: UITableView!
     override func viewDidLoad() {
@@ -22,7 +24,15 @@ class InfoViewController: UIViewController {
         
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(passINFO), name: NSNotification.Name("passINFO"), object: nil)
+    }
     
+    @objc func passINFO(_ notification: Notification) {
+        guard let text = notification.userInfo?["text"] as? Products else { return }
+        print ("text: \(text)")
+    }
 }
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
