@@ -98,7 +98,6 @@ class SignUpViewController: UIViewController {
                         let _ = strongSelf.navigationController?.popToRootViewController(animated: true)
                     }
                 }
-                
             })
             return nil
         }

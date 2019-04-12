@@ -9,7 +9,6 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-    
    
     var theItem: Products!
    

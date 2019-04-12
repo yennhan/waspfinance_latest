@@ -24,6 +24,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
     var scrollingTimer: Timer?
     var scrollingUp = false
     
+    var allBonds: [bData] = []
     let bondName = ["RHB IMTN 5.060% 12.02 2049-TRANCHE 10","DRB Bond","Genting ","Ambank "]
     let bondPrice = ["101.50","100.00","98.50","105.50"]
     let fluctuactionPrice = ["+0.05","+1.10","-1.50","+0.50"]
@@ -59,7 +60,7 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
-       
+        getAllBonds()
        
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,13 +76,12 @@ class HomeViewController: UIViewController,ChartViewDelegate{
         theview.Portfolio.setTitleColor(UIColor.lightGray, for: .normal)
         theview.portfolioUnderline.backgroundColor = UIColor.lightGray
         getAllProducts()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refresh()
         theHomeTableView.showsVerticalScrollIndicator = false
-       
     }
     
     func refresh() {
@@ -145,7 +145,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return productArray.count
+            return allBonds.count
         }else if collectionView.tag == 2 {
                 return picURL.count
         }else {
@@ -157,17 +157,20 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         if collectionView.tag == 1{
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "topTrend", for: indexPath) as! TopPicksCollectionViewCell
             cell1.topPickImage.kf.setImage(with:  URL(string: cityImage[indexPath.row]))
-            cell1.bondName.text = productArray[indexPath.row]._productName!
+            cell1.bondName.text = allBonds[indexPath.row].bondName!
             cell1.topPickImage.layer.borderColor = UIColor.lightGray.cgColor
             cell1.topPickImage.layer.borderWidth = 0.2
             cell1.theLogoImage.kf.setImage(with: URL(string: picURL[indexPath.row]))
-            cell1.bondReturn.text = "Return: \(String(describing: productArray[indexPath.row]._return!))"
-            cell1.bondRating.text = "Ratings: \(String(describing: productArray[indexPath.row]._productRatings!))"
-            cell1.bondTenure.text = "Tenure(yrs): \(String(describing: productArray[indexPath.row]._tenure!))"
-            cell1.amountBought.text = "\(productArray[indexPath.row]._crowdfunding?.value(forKey: "totalAmountInvested") ?? "Not loaded" )"
-            //cell1.duration.text = "\(productArray[indexPath.row]._crowdfunding![3] as! NSNumber )"
-            //cell1.progressBarLabel.text = "\(productArray[indexPath.row]._crowdfunding![2]) LEFT"
-            
+            cell1.bondReturn.text = "Return: \(String(describing: allBonds[indexPath.row].interestReturn!) )%"
+            cell1.bondRating.text = "Ratings: \(String(describing: allBonds[indexPath.row].ratings!))"
+            cell1.bondTenure.text = "Tenure(yrs): \(String(describing: allBonds[indexPath.row].tenure!))"
+            //cell1.amountBought.text = "\(productArray[indexPath.row]._crowdfunding?.value(forKey: "totalAmountInvested") ?? "Not loaded" )"
+            //print(allBonds.count)
+            let thedate = (allBonds[indexPath.row].infoID?.issueDate)
+            let expiredate = (allBonds[indexPath.row].infoID?.maturityDate)
+            let theremainDays = daysleft(announceDate: thedate!, endDate: expiredate!)
+            cell1.duration.text = "\(theremainDays)"
+            cell1.progressBarLabel.text = "RM \(allBonds[indexPath.row].amountRemain!) LEFT"
             cell1.layer.borderColor = UIColor.lightGray.cgColor
             cell1.layer.borderWidth = 0.4
             cell1.layer.cornerRadius = 7.0
@@ -226,6 +229,18 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         theCard.layer.borderWidth = 0.1
         theCard.layer.shadowPath = UIBezierPath(rect: theCard.bounds).cgPath
         
+    }
+    func daysleft(announceDate:String,endDate:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'"
+        let date1 = dateFormatter.date(from: announceDate)
+        let date2 = dateFormatter.date(from: endDate)
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .short// May delete the word brief to let Xcode show you the other options
+        formatter.allowedUnits = [.day]
+        formatter.maximumUnitCount = 1   // Show just one unit (i.e. 1d vs. 1d 6hrs)
+        let stringDate = formatter.string(from: date1!, to: date2!)
+        return stringDate!
         
     }
     
@@ -250,6 +265,62 @@ extension HomeViewController {
     public func chartValueNothingSelected(_ chartView: ChartViewBase) {
         theLabels!.isHidden = true
         //self.testCollection.isScrollEnabled = true
+    }
+}
+
+struct bData: Decodable {
+    let BONDID_ISIN     : String?
+    let bondName        : String?
+    let issuerName      : String?
+    let ratings         : String?
+    let price           : Decimal?
+    let interestReturn  : Decimal?
+    let tenure          : Decimal?
+    let amountRemain    : Decimal?
+    let descriptions     : String?
+    let infoID          : addInfo?
+    let primaryOrSecondary : String?
+    let addInfoID       : String?
+}
+
+struct addInfo: Decodable {
+    let annualCouponRate : String?
+    let annualCouponFreq : String?
+    let seniority        : String?
+    let anouncementDate  : String?
+    let issueDate        : String?
+    let maturityDate     : String?
+    let bondCreditRatings: String?
+    let exchangeListed   : String?
+    let bondType         : String?
+    let bondSector       : String?
+    let bondSubSector    : String?
+    let bondComplexity   : String?
+    let CUSIP            : String?
+    let Principal        : String?
+    let islamicConcept   : String?
+}
+extension HomeViewController {
+    func getAllBonds()  {
+        guard let url = URL(string:"https://api.wasp.finance/bonds") else {return}
+        
+        let session = URLSession.shared
+        session.dataTask(with: url){(data, response, error) in
+            if let response = response {
+               //print(response)
+            }
+            if let data = data {
+                DispatchQueue.main.async(execute: {
+                    do {
+                        self.allBonds = try JSONDecoder().decode( [bData].self, from: data)
+                        self.theViewCollection.reloadData()
+                    } catch {
+                        print(error)
+                    }
+                })
+                //print(data)
+            }
+            }.resume()
     }
 }
 
